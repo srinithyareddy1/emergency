@@ -14,8 +14,7 @@ function Signup(){
     const handleSignup= async ()=>{
         try{
             await axios.post(
-                "http://localhost:8081/auth/signup",
-                {
+"https://auth-service-y83q.onrender.com/signup",                {
                     email:email,
                     password:password,
                     role:role

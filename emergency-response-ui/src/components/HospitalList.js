@@ -8,7 +8,7 @@ function HospitalList(){
 
   useEffect(()=>{
 
-    axios.get("http://localhost:8082/hospitals")
+    axios.get("https://hospital-service-xxxx.onrender.com/hospitals")
       .then(res=>{
         console.log(res.data);
         setHospitals(res.data);

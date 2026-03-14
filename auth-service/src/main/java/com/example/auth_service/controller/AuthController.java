@@ -12,7 +12,7 @@ import com.example.auth_service.service.AuthService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="*")
 public class AuthController {
 
     @Autowired

@@ -14,7 +14,7 @@ function EmergencyRequest() {
 
      const fetchRequests=async()=>{
         try{
-            const res=await axios.get("http://localhost:8083/requests");
+            const res=await axios.get("https://emergency-service-xxxx.onrender.com/requests");
             setRequests(res.data);
         }catch(error){
             console.log(error);
@@ -26,7 +26,7 @@ function EmergencyRequest() {
             return;
         }try{
             await axios.post(
-                "http://localhost:8083/requests",{
+                "https://emergency-service-xxxx.onrender.com/requests",{
                     name:name,
                     location:location
                 }
