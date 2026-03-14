@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from "react";
-import { getHospitals } from "../services/api";
 import axios from "axios";
 
 function HospitalList(){
