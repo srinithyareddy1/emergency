@@ -1,6 +1,10 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
+
+COPY . .
+
+RUN ./mvnw clean package -DskipTests
 
 COPY target/*.jar app.jar
 
