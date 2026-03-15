@@ -14,10 +14,10 @@ function Signup(){
     const handleSignup= async ()=>{
         try{
             await axios.post(
-"https://auth-service-y83q.onrender.com/signup",                {
+"https://auth-service-y83q.onrender.com/auth/signup",                {
                     email:email,
                     password:password,
-                    role:role
+                    role:role.toLocaleUpperCase()
                 }
             );
             alert("Signup successful");
