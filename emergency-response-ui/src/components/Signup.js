@@ -7,7 +7,7 @@ import axios from "axios";
 function Signup(){
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const [role,setRole]=useState("user");
+    const [role,setRole]=useState("USER. ");
 
     const navigate=useNavigate();
 
@@ -47,7 +47,7 @@ function Signup(){
             value={role}
             onChange={(e)=>setRole(e.target.value)}
             >
-            <option value={"user"}>User </option>
+            <option value={"USER"}>User </option>
             <input type="hidden" value="user"/>
                </select>
             

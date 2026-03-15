@@ -12,7 +12,7 @@ function Login() {
     const handleLogin = async () => {
         try {
             const response = await axios.post(
-                ("https://auth-service-y83q.onrender.com/login"), {
+                ("https://auth-service-y83q.onrender.com/auth/login"), {
                 email: email,
                 password: password
             }
