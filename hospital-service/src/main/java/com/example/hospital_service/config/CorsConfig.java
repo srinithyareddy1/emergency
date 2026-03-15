@@ -11,10 +11,15 @@ public class CorsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
+
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+
                 registry.addMapping("/**")
-                        .allowedOrigins("https://emergency-response-ui.netlify.app")
+                        .allowedOrigins(
+                                "http://localhost:3000",
+                                "https://emergency-response-ui.netlify.app"
+                        )
                         .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
                         .allowedHeaders("*");
             }
