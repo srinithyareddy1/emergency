@@ -10,20 +10,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/requests")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "https://emergency-response-ui.netlify.app")
 public class EmergencyController {
 
     @Autowired
     private EmergencyService service;
 
     @PostMapping
-    public EmergencyRequest createRequest(@RequestBody EmergencyRequest request){
+    public EmergencyRequest createRequest(@RequestBody EmergencyRequest request) {
 
-        return service.creaRequest(request);
+        return service.createRequest(request);
     }
+
     @GetMapping
-    public List<EmergencyRequest> getRequests(){
+    public List<EmergencyRequest> getRequests() {
         return service.getRequests();
     }
-    
+
 }

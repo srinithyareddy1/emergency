@@ -13,7 +13,7 @@ public class EmergencyService {
     @Autowired
     private EmergencyRepository repo;
 
-    public EmergencyRequest creaRequest(EmergencyRequest request){
+    public EmergencyRequest createRequest(EmergencyRequest request){
 
         request.setStatus("Ambulance on the way");
 

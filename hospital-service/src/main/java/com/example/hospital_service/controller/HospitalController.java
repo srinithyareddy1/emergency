@@ -11,21 +11,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hospitals")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "https://emergency-response-ui.netlify.app")
 public class HospitalController {
-   
+
     @Autowired
     private HospitalService service;
-    
+
     @PostMapping
-    public Hospital addHospital(@RequestBody Hospital hospital){
+    public Hospital addHospital(@RequestBody Hospital hospital) {
         return service.addHospital(hospital);
     }
+
     @GetMapping
-    public List<Hospital> getHospitals(){
+    public List<Hospital> getHospitals() {
         return service.getHospitals();
-    
+
     }
 
-    
 }
