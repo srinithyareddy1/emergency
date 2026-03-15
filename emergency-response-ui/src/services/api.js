@@ -18,7 +18,7 @@ export const loginUser = (data) => {
 };
 
 export const registerUser = (data) => {
-  return axios.post(`${AUTH_API}/auth/register`, data);
+  return axios.post(`${AUTH_API}/auth/signup`, data);
 };
 
 
