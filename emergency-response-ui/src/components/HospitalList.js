@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import axios from "axios";
+import { getHospitals } from "../services/api";
 
 function HospitalList(){
 
@@ -7,11 +7,12 @@ function HospitalList(){
 
   useEffect(()=>{
 
-    axios.get("https://hospital-service-xxxx.onrender.com/hospitals")
+    getHospitals()
       .then(res=>{
         console.log(res.data);
         setHospitals(res.data);
-      });
+      })
+      .catch(err => console.error(err));
 
   },[]);
     return(

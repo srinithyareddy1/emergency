@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { getEmergencies, requestAmbulance } from "../services/api";
 
 function EmergencyRequest() {
     const [location, setLocation] = useState("");
@@ -13,7 +13,7 @@ function EmergencyRequest() {
 
      const fetchRequests=async()=>{
         try{
-            const res=await axios.get("https://emergency-service-xxxx.onrender.com/requests");
+            const res=await getEmergencies();
             setRequests(res.data);
         }catch(error){
             console.log(error);
@@ -24,12 +24,10 @@ function EmergencyRequest() {
             alert("please enter name and location");
             return;
         }try{
-            await axios.post(
-                "https://emergency-service-xxxx.onrender.com/requests",{
-                    name:name,
-                    location:location
-                }
-            ); 
+            await requestAmbulance({
+                name:name,
+                location:location
+            }); 
             alert("Ambulance requested");
 
             setName("");

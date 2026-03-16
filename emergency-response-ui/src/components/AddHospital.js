@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { getHospitals, addHospital } from "../services/api";
 
 function AddHospital() {
     const [name, setName] = useState("");
@@ -8,7 +8,7 @@ function AddHospital() {
     const [hospitals, setHospitals] = useState([]);
 
   useEffect(() => {
-  axios.get("http://localhost:8082/hospitals")
+  getHospitals()
     .then(res => {
       setHospitals(res.data);
     })
@@ -23,7 +23,7 @@ function AddHospital() {
     beds: beds
   };
 
-  axios.post("http://localhost:8082/hospitals", hospitalData)
+  addHospital(hospitalData)
     .then(res => {
       setHospitals([...hospitals, res.data]);
     })

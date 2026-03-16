@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { loginUser } from "../services/api";
 import "../App.css";
 
 function Login() {
@@ -11,12 +11,10 @@ function Login() {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post(
-                ("https://auth-service-y83q.onrender.com/auth/login"), {
+            const response = await loginUser({
                 email: email,
                 password: password
-            }
-            );
+            });
             const user = response.data;
 
             //store logged user

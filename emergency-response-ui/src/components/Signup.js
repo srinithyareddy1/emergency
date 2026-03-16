@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-import axios from "axios";
+import { registerUser } from "../services/api";
 
 
 function Signup(){
@@ -13,13 +13,11 @@ function Signup(){
 
     const handleSignup= async ()=>{
         try{
-            await axios.post(
-"https://auth-service-y83q.onrender.com/auth/signup",                {
-                    email:email,
-                    password:password,
-                    role:role.toLocaleUpperCase()
-                }
-            );
+            await registerUser({
+                email:email,
+                password:password,
+                role:role.toLocaleUpperCase()
+            });
             alert("Signup successful");
             navigate("/");
         }catch(error){
