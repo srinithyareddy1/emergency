@@ -19,19 +19,19 @@ export const registerUser = (data) => {
 /* HOSPITAL SERVICE */
 
 export const getHospitals = () => {
-  return axios.get(`${HOSPITAL_API}/hospital/available`);
+  return axios.get(`${HOSPITAL_API}/hospitals`);
 };
 
 export const addHospital = (data) => {
-  return axios.post(`${HOSPITAL_API}/hospital/add`, data);
+  return axios.post(`${HOSPITAL_API}/hospitals`, data);
 };
 
 /* EMERGENCY SERVICE */
 
 export const requestAmbulance = (data) => {
-  return axios.post(`${EMERGENCY_API}/emergency/request`, data);
+  return axios.post(`${EMERGENCY_API}/requests`, data);
 };
 
 export const getEmergencies = () => {
-  return axios.get(`${EMERGENCY_API}/emergency/all`);
+  return axios.get(`${EMERGENCY_API}/requests`);
 };
