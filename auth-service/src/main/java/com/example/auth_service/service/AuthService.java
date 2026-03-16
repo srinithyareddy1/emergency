@@ -17,9 +17,9 @@ public class AuthService {
 
     public User signup(User user){
 
-        if(user.getRole().equalsIgnoreCase("admin")){
-            throw new RuntimeErrorException(null, "Admin signup not allowed");
-        }
+        // if(user.getRole().equalsIgnoreCase("admin")){
+        //     throw new RuntimeErrorException(null, "Admin signup not allowed");
+        // }
         return repo.save(user);
     }
 
